@@ -27,9 +27,8 @@ class ApplicationController < Sinatra::Base
     redirect to "articles/#{Article.last.id}"
   end
 
-
-  get 'articles/:id' do
-    @article = Article.find(params[:id])
+  get '/articles/:id' do
+    @article = Article.find(Article.last.id)
     erb :show
   end
 
